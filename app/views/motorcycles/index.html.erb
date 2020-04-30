@@ -1,0 +1,9 @@
+<h1> Search Results based on "<%= @description %>"</h1><br>
+<ol>
+<% @motorcycles.each do |motorcycle| %>
+<li><%= motorcycle.brand %><br>
+<%= motorcycle.model %> <br>
+<%= motorcycle.engine_size %>cc<br>
+<%= motorcycle.year %></li>
+<% end %>
+</ol>
