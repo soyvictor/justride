@@ -1,5 +1,4 @@
 class MotorcyclesController < ApplicationController
-
   def index
     @motorcycles = Motorcycle.all
     @search = params["search"]
@@ -7,5 +6,7 @@ class MotorcyclesController < ApplicationController
       @description = @search["description"]
       @motorcycles = Motorcycle.where(description: @description)
     end
+
+  def show
   end
 end
