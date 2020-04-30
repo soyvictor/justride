@@ -1,0 +1,33 @@
+.cardy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 3px black;
+  width: 550px;
+  height: 150px;
+  margin: auto;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.cardy h3 {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.cardy img {
+  border-radius: 10px;
+}
+
+.cardy p {
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.cardy-description {
+  padding-right: 24px;
+}
