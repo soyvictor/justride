@@ -1,0 +1,10 @@
+<h1> Search Results for "<%= @description %>" </h1>
+
+<% @motorcycles.each do |motorcycle| %>
+<%= motorcycle.brand %> <br>
+<%= motorcycle.model %> <br>
+<%= motorcycle.motorcycle_type %> <br>
+<%= motorcycle.year %> <br>
+<%= motorcycle.engine_size %> <br>
+<%= motorcycle.price_per_day %>
+<% end %>
