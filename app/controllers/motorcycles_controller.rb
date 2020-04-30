@@ -13,6 +13,14 @@ class MotorcyclesController < ApplicationController
     @motorcycles = Motorcycle.all
   end
 
+  def new
+    @motorcycle = Motorcycle.new
+  end
+
+  def create
+    @
+  end
+
   def show
   end
 
