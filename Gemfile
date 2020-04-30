@@ -30,3 +30,4 @@ end
 
 # Added by Victor
   gem 'devise'
+  gem 'cloudinary', '~> 1.12.0'
