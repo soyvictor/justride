@@ -1,10 +1,17 @@
-<h1> Search Results for "<%= @description %>" </h1>
-
+<h1 style="text-align: center; margin-top: 24px;">Search Results</h1>
+<div class="container">
+<div class="cardy">
+  <img style="width: 200px; height:150px" src="https://images.unsplash.com/photo-1587971051803-70bf6d4ae977?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80" alt="">
 <% @motorcycles.each do |motorcycle| %>
-<%= motorcycle.brand %> <br>
-<%= motorcycle.model %> <br>
-<%= motorcycle.motorcycle_type %> <br>
-<%= motorcycle.year %> <br>
-<%= motorcycle.engine_size %> <br>
-<%= motorcycle.price_per_day %>
+<div class="cardy-description">
+<h3> <%= motorcycle.description %> </h3>
+<p> Brand: <%= motorcycle.brand %> </p>
+<p> Model: <%= motorcycle.model %> </p>
+<p> Type: <%= motorcycle.motorcycle_type %> </p>
+<p> Year: <%= motorcycle.year %> </p>
+<p> Engine: <%= motorcycle.engine_size %>cc </p>
+<p> Price Per Day: <%= motorcycle.price_per_day %>$ </p>
 <% end %>
+</div>
+</div>
+</div>
