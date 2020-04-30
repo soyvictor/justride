@@ -9,7 +9,13 @@ class MotorcyclesController < ApplicationController
       end
     end
 
+  def my_motorcycles
+    @motorcycles = Motorcycle.all
+  end
+
   def show
   end
+
+
 
 end
