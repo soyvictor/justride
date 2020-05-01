@@ -10,7 +10,7 @@ class MotorcyclesController < ApplicationController
   end
 
   def my_motorcycles
-    @motorcycles = Motorcycle.all
+    @motorcycles = Motorcycle.where(user: current_user)
   end
 
   def new
@@ -21,10 +21,20 @@ class MotorcyclesController < ApplicationController
     @motorcycle = Motorcycle.new(motorcycle_params)
     @motorcycle.user = current_user
     @motorcycle.save
-    redirect_to root_path
+    redirect_to motorcycle_path(@motorcycle)
   end
 
   def show
+  end
+
+  def edit
+    @motorcycle = Motorcycle.find(params[:id])
+  end
+
+  def update
+    @motorcycle = Motorcycle.find(params[:id])
+    @motorcycle.update(motorcycle_params)
+    redirect_to motorcycle_path(@motorcycle)
   end
 
   private

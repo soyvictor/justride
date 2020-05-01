@@ -7,24 +7,12 @@ Rails.application.routes.draw do
     collection do
       get :my_motorcycles
     end
+  end
 
-    resources :bookings, except: [:edit, :destroy, :update]
+    resources :bookings, except: [:edit, :destroy, :update] do
       collection do
         get :my_bookings
       end
-  end
+    end
 end
 
-
-
-
-
-
-
-# Rails.application.routes.draw do
-#   resources :restaurants do
-#     collection do
-#       get :top
-#     end
-#   end
-# end
