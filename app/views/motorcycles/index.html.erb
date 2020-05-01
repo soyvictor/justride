@@ -1,42 +1,30 @@
-<!-- <h1 style="text-align: left; margin-top: 24px;">Search Results</h1>
-<div class="container">
-  <div class="moto-cards">
-    <% @motorcycles.each do |motorcycle| %>
-      <div class="moto-card">
-        <img style="width: 200px; height:150px object-fit: cover;" src="https://images.unsplash.com/photo-1587971051803-70bf6d4ae977?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80" alt="" class="moto-card-img">
-        <div class="moto-card-info-top">
-          <h3> <%= motorcycle.description %> </h3>
-          <div class="moto-card-info-middle">
+ <h1 style="padding:8px"> Search Results </h1>
+ <div class="container">
+  <% @motorcycles.each do |motorcycle| %>
+    <div class="card-product">
+        <img src="https://images.unsplash.com/photo-1587971051803-70bf6d4ae977?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80" />
+       <a style="color: inherit;" href="/">
+        <div class="card-product-infos">
+          <div class="card-product-infos-top">
+            <p> <%= motorcycle.motorcycle_type %> in <%= motorcycle.city %> </p>
+            <h2><%= motorcycle.title %></h2>
+          </div>
+          <p>"<%= motorcycle.description %>"" </p>
+          <div class="card-product-infos-middle">
             <p> Brand: <%= motorcycle.brand %> </p>
             <p> Model: <%= motorcycle.model %> </p>
             <p> Type: <%= motorcycle.motorcycle_type %> </p>
             <p> Year: <%= motorcycle.year %> </p>
             <p> Engine: <%= motorcycle.engine_size %>cc </p>
           </div>
-          <div class="moto-card-info-bottom">
-            <p> 4.5 </p>
-            <p><%= motorcycle.price_per_day %>$ / day </p>
+          <div class="card-product-infos-bottom">
+            <p> 4.5 (<%= rand(1..1000) %>) </p>
+            <p> <%= motorcycle.price_per_day %>$ / day </p>
           </div>
         </div>
+      </a>
       </div>
-    <% end %>
-  </div>
-  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoidGVpaG90YSIsImEiOiJjazd6ajY1ZGgwNTZxM2VwYWJtaXE1aHoyIn0.KgwV6Vv8hll31y7SbAIRxA'>
-</div>
+   <% end %>
+ </div>
 
- -->
-<% @motorcycles.each do |motorcycle| %>
-  <div class="card-product">
-    <img src="https://images.unsplash.com/photo-1587971051803-70bf6d4ae977?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80" />
-    <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
-      <p> Brand: <%= motorcycle.brand %> </p>
-      <p> Model: <%= motorcycle.model %> </p>
-      <p> Type: <%= motorcycle.motorcycle_type %> </p>
-      <p> Year: <%= motorcycle.year %> </p>
-      <p> Engine: <%= motorcycle.engine_size %>cc </p>
-    </div>
-  </div>
-<% end %>
 
