@@ -4,8 +4,8 @@ class MotorcyclesController < ApplicationController
     @motorcycles = Motorcycle.all
     @search = params["search"]
       if @search.present?
-        @description = @search["description"]
-        @motorcycles = Motorcycle.where(description: @description)
+        @city = @search["city"]
+        @motorcycles = Motorcycle.where(city: @city)
       end
   end
 
