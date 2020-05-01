@@ -25,6 +25,7 @@ class MotorcyclesController < ApplicationController
   end
 
   def show
+    @motorcycle = Motorcycle.find(params[:id])
   end
 
   def edit
@@ -40,7 +41,7 @@ class MotorcyclesController < ApplicationController
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:brand, :model, :year, :engine_size, :title, :description, :gear_included, :price_per_day, :motorcycle_type, :photo)
+    params.require(:motorcycle).permit(:brand, :model, :year, :engine_size, :title, :description, :gear_included, :price_per_day, :motorcycle_type, :city, photos: [])
   end
 
 end
