@@ -1,4 +1,4 @@
 <%= simple_form_for :search, url: motorcycles_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-<%= f.input :description, input_html: {value: ""}, label: false %>
+<%= f.input :city, input_html: {value: ""}, label: false %>
 <%= f.submit "Search", class: "btn btn-primary" %>
 <% end %>
