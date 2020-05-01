@@ -1,0 +1,22 @@
+<h1 class="text-center mt-4">Create your new motorcycle listing</h1>
+<div class="m-auto" style="width: 700px">
+
+<%= simple_form_for [@motorcycle] do |f| %>
+  <%= f.input :brand %>
+  <%= f.input :model %>
+  <%= f.input :year %>
+  <%= f.input :motorcycle_type, collection: [ "Street", "Touring", "Off-road", "Standard", "Cruiser", "Scooter"] %>
+  <%= f.input :engine_size %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :gear_included %>
+  <%= f.input :price_per_day%>
+  <%= f.input :photo, as: :file %>
+
+  <div class="text-center">
+  <%= f.submit "List your motorcycle", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+</div>
+
