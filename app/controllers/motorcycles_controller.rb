@@ -27,6 +27,16 @@ class MotorcyclesController < ApplicationController
   def show
   end
 
+  def edit
+    @motorcycle = Motorcycle.find(params[:id])
+  end
+
+  def update
+    @motorcycle = Motorcycle.find(params[:id])
+    @motorcycle.update(motorcycle_params)
+    redirect_to motorcycle_path(@motorcycle)
+  end
+
   private
 
   def motorcycle_params
