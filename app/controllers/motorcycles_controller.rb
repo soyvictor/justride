@@ -4,8 +4,8 @@ class MotorcyclesController < ApplicationController
     @motorcycles = Motorcycle.all
     @search = params["search"]
       if @search.present?
-        @city = @search["city"]
-        @motorcycles = Motorcycle.where(city: @city)
+        @address = @search["address"]
+        @motorcycles = Motorcycle.where(address: @address)
       end
   end
 
@@ -41,7 +41,7 @@ class MotorcyclesController < ApplicationController
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:brand, :model, :year, :engine_size, :title, :description, :gear_included, :price_per_day, :motorcycle_type, :city, photos: [])
+    params.require(:motorcycle).permit(:brand, :model, :year, :engine_size, :title, :description, :gear_included, :price_per_day, :motorcycle_type, :address, photos: [])
   end
 
 end

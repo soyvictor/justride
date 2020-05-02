@@ -16,6 +16,6 @@ Motorcycle.delete_all
 
 10.times do
   user = User.create(email: Faker::Internet.email, password:'password' , password_confirmation: 'password')
-  motorcycle = Motorcycle.create(user: user, brand: motorcycle_makes.sample, motorcycle_type: motorcycle_types.sample, model: motorcycle_models.sample, engine_size: engine_sizes.sample, price_per_day: rand(50..200), description: "Wow what a great motorcycle", year: rand(1975..2020), title: "#{adjectives.sample} New Motorcycle For Rent", city: "Mexico City")
+  motorcycle = Motorcycle.create(user: user, brand: motorcycle_makes.sample, motorcycle_type: motorcycle_types.sample, model: motorcycle_models.sample, engine_size: engine_sizes.sample, price_per_day: rand(50..200), description: "Wow what a great motorcycle", year: rand(1975..2020), title: "#{adjectives.sample} New Motorcycle For Rent", address: "Mexico City")
   puts "#{motorcycle.model}  Added!"
 end
