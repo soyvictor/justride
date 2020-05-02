@@ -1,12 +1,19 @@
 class MotorcyclesController < ApplicationController
 
   def index
-    @motorcycles = Motorcycle.all
+    @motorcycles = Motorcycle.geocoded
     @search = params["search"]
       if @search.present?
-        @city = @search["city"]
-        @motorcycles = Motorcycle.where(city: @city)
+        @address = @search["address"]
+        @motorcycles = Motorcycle.near(@address, 100)
       end
+
+       @markers = @motorcycles.map do |motorcycle|
+      {
+        lat: motorcycle.latitude,
+        lng: motorcycle.longitude
+      }
+    end
   end
 
   def my_motorcycles
@@ -42,7 +49,7 @@ class MotorcyclesController < ApplicationController
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:brand, :model, :year, :engine_size, :title, :description, :gear_included, :price_per_day, :motorcycle_type, :city, photos: [])
+    params.require(:motorcycle).permit(:brand, :model, :year, :engine_size, :title, :description, :gear_included, :price_per_day, :motorcycle_type, :address, photos: [])
   end
 
 end
