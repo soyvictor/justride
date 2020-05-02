@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_02_022337) do
+
+ActiveRecord::Schema.define(version: 2020_05_02_191917) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,12 +41,11 @@ ActiveRecord::Schema.define(version: 2020_05_02_022337) do
   create_table "bookings", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer "price_per_day"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "motorcycles_id"
-    t.index ["motorcycles_id"], name: "index_bookings_on_motorcycles_id"
+    t.bigint "motorcycle_id"
+    t.index ["motorcycle_id"], name: "index_bookings_on_motorcycle_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -80,7 +81,7 @@ ActiveRecord::Schema.define(version: 2020_05_02_022337) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "motorcycles", column: "motorcycles_id"
+  add_foreign_key "bookings", "motorcycles"
   add_foreign_key "bookings", "users"
   add_foreign_key "motorcycles", "users"
 end
