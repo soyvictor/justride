@@ -5,7 +5,7 @@ class MotorcyclesController < ApplicationController
     @search = params["search"]
       if @search.present?
         @address = @search["address"]
-        @motorcycles = Motorcycle.near(@address, 10)
+        @motorcycles = Motorcycle.near(@address, 100)
       end
 
        @markers = @motorcycles.map do |motorcycle|

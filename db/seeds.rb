@@ -10,7 +10,7 @@ motorcycle_models = ["Ninja", "Monster", "GXR", "Fireblade", "YZF"]
 motorcycle_types = ["Sport", "Touring", "Dual-Sport", "Dirtbike", "Street", "Cruiser", "Chopper"]
 engine_sizes = [1000, 600, 800, 400, 250,]
 adjectives = ["Amazing", "Fantastic", "Incredible", "Badass", "Chingon"]
-addresses = ["Campeche 34, Hipódromo, Mexico City","Chilpancingo 21, Hipódromo, Mexico City","Campeche 362, Colonia Condesa","Av. Álvaro Obregón 269, Roma Nte","Calle Antonio M. Anza 20, Roma Sur", "C.C. Parque Delta, Cuauhtémoc No. 462"]
+addresses = ["Campeche 34, Hipódromo, Mexico City","Chilpancingo 21, Hipódromo, Mexico City","Campeche 362, Colonia Condesa, Mexico City","Av. Álvaro Obregón 269, Roma Nte, Mexico City","Calle Antonio M. Anza 20, Roma Sur, Mexico City", "C.C. Parque Delta, Cuauhtémoc No. 462, Mexico City"]
 
 
 Motorcycle.delete_all
