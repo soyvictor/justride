@@ -1,6 +1,15 @@
-.container {
+.container-fluid {
   display: flex;
   margin: 0px 0px;
+  padding: 0px 0px;
+}
+
+.row {
+  overflow: hidden;
+}
+
+.moto-cards {
+  display: list-item;
 }
 
 .card-product {
@@ -10,7 +19,7 @@
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 600px;
+  width: 615px;
   padding-top: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #e5e5e5;
