@@ -1,12 +1,19 @@
 class MotorcyclesController < ApplicationController
 
   def index
-    @motorcycles = Motorcycle.all
+    @motorcycles = Motorcycle.geocoded
     @search = params["search"]
       if @search.present?
         @address = @search["address"]
-        @motorcycles = Motorcycle.where(address: @address)
+        @motorcycles = Motorcycle.near(@address, 10)
       end
+
+       @markers = @motorcycles.map do |motorcycle|
+      {
+        lat: motorcycle.latitude,
+        lng: motorcycle.longitude
+      }
+    end
   end
 
   def my_motorcycles

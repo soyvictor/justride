@@ -1,45 +1,7 @@
-// .moto-container {
-//   display: flex;
-// }
-// .moto-cards {
-//  display: grid;
-//  grid-template-columns: 1fr;
-//  padding-left: 8px;
-//  padding-right: 8px;
-// }
-// .moto-card {
-//  display: flex;
-//   height: 150px;
-//   border-bottom: 1px solid #E3E3E3;
-//   padding-bottom: 8px;
-// }
-// .moto-card-top-info {
-//   position: relative;
-
-// }
-// .moto-card-middle-info {
-//   position: relative;
-
-// }
-// .moto-card-bottom-info {
-//   display: flex;
-//   justify-content: space-between;
-// }
-// .moto-card-img {
-//   padding-right: 8px;
-// }
-
-// .container {
-
-//   display: flex;
-// }
-
-// #map {
-//   position: sticky;
-//   height: 100vh;
-//   top: 0;
-// }
-
+.container {
+  display: flex;
+  margin: 0px 0px;
+}
 
 .card-product {
   overflow: hidden;
