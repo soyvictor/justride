@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
@@ -30,3 +31,8 @@ end
 
 # Added by Victor
   gem 'devise'
+  gem 'cloudinary', '~> 1.12.0'
+
+# Added by TZ
+  gem 'faker'
+  gem 'geocoder'

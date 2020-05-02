@@ -1,0 +1,4 @@
+<%= simple_form_for :search, url: motorcycles_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+<%= f.input :address, input_html: {value: ""}, label: false, placeholder: 'Where will you rent?' %>
+<%= f.submit "Search", class: "btn ml-2", style: "background-color: #593cfb; color: white;" %>
+<% end %>

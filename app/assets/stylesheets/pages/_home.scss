@@ -3,9 +3,10 @@
 h2 {
   text-align: center;
   margin-top: 24px;
-  color: #21bf73;
+  color: #231f20;
   font-weight: bold;
-  font-family: 'open sans'
+  font-family: 'vollkorn';
+  margin-bottom: 20px;
 }
 
 .banner-container {
@@ -26,6 +27,7 @@ h2 {
   display: flex;
   justify-content: space-around;
   margin: 0px auto;
+  margin-bottom: 50px;
 }
 
 .main-card {
@@ -36,22 +38,22 @@ h2 {
   border: 1px solid rgba(240, 240, 240, 0.5);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
   padding: 40px;
-}
-
-.main-card {
   font-weight: bold;
+  background-color: whit#C1C1C1e;
 }
 
 .main-card p {
-  color: #12633D;
-  font-family: 'Open sans';
+  // color: #12633D;
+  color: #412DB4;
+  font-family: 'vollkorn';
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .fas, .far {
   font-size: 50px;
-  color: #21bf73 ;
+  color: #4831C9;
+  // color: #21bf73 ;
   margin-bottom: 10px;
 }
 
@@ -65,7 +67,7 @@ h2 {
   justify-content: center;
   font-weight: lighter;
   font-size: 12px;
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: rgba(220, 220, 220, 0.4);
   height: 60px;
 }
 
@@ -92,3 +94,4 @@ h2 {
 .footer p {
 
 }
+

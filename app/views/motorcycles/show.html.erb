@@ -1,0 +1,81 @@
+<div class="container py-3">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+
+        <div class="carousel-inner rounded mb-3">
+          <div class="carousel-item active">
+            <%= cl_image_tag @motorcycle.photos.first.key,  class: "d-block w-100", alt: "first slide" %>
+          </div>
+
+          <% @motorcycle.photos.drop(1).each do |photo| %>
+            <div class="carousel-item">
+              <%= cl_image_tag photo.key,  class: "d-block w-100", alt: "a slide" %>
+            </div>
+          <% end %>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <h1><%= @motorcycle.title %></h1>
+      <p><%= @motorcycle.description %></p>
+      <p style="font-style: italic">More info:</p>
+      <ul>
+        <li>Engine size: <%= @motorcycle.engine_size %></li>
+        <li>Riding gear included: <%= @motorcycle.gear_included ? "yes" : "no" %></li>
+      </ul>
+
+    </div>
+
+    <div class="col-12 col-lg-4">
+      <div class="border p-3">
+        <h2>Book this bike!</h2>
+
+
+<!--      <%= simple_form_for [@booking] do |f| %>
+          <%= f.label 'Pickup' %>
+          <%= f.input :start_date, as: :date%>
+      <%= f.input :end_date, as: :date%>
+          <%= f.submit "Book now", class: "btn btn-primary form-control" %>
+        <% end %> -->
+
+
+
+
+
+
+
+        <form action="/bookings" method="post" id="new_booking">
+
+          <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+
+          <div class="form-group">
+            <label for="">Pickup</label>
+            <input type="date"  class="form-control" name="booking[start_date">
+          </div>
+
+          <div class="form-group">
+            <label for="">Dropoff</label>
+            <input type="date"  class="form-control" name="booking[end_date]">
+          </div>
+
+          <input type="hidden" id="motorcycle_id" name="motorcycle_id" value=<%= @motorcycle.id %> >
+
+          <input type="submit" value="Book now" class="btn btn-primary btn-lg w-100">
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

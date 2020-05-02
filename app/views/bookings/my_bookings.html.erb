@@ -1,0 +1,16 @@
+<h1 style="text-align: center; margin-top: 24px;">My Bookings</h1>
+<div class="container">
+
+  <% @bookings.each do |booking| %>
+
+    <div class="cardy">
+      <%= cl_image_tag booking.motorcycle.photos.first.key, height: 150, width: 200, crop: :fill %>
+      <div class="cardy-description">
+        <h3><%= booking.motorcycle.year %> <%= booking.motorcycle.brand %> <%= booking.motorcycle.model %></h3>
+        <%= link_to 'Go to listing', motorcycle_path(booking.motorcycle) %>
+        <p style="font-size: 14px">Starts: <%= booking.start_date %></p>
+        <p style="font-size: 14px">Ends: <%= booking.end_date %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
