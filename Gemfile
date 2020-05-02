@@ -35,3 +35,4 @@ end
 
 # Added by TZ
   gem 'faker'
+  gem 'geocoder'
