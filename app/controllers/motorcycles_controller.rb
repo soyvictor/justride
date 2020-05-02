@@ -1,7 +1,7 @@
 class MotorcyclesController < ApplicationController
 
   def index
-    @motorcycles = Motorcycle.geocoded
+    @motorcycles = Motorcycle.all
     @search = params["search"]
       if @search.present?
         @address = @search["address"]
