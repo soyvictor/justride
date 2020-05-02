@@ -1,45 +1,16 @@
-// .moto-container {
-//   display: flex;
-// }
-// .moto-cards {
-//  display: grid;
-//  grid-template-columns: 1fr;
-//  padding-left: 8px;
-//  padding-right: 8px;
-// }
-// .moto-card {
-//  display: flex;
-//   height: 150px;
-//   border-bottom: 1px solid #E3E3E3;
-//   padding-bottom: 8px;
-// }
-// .moto-card-top-info {
-//   position: relative;
+.container-fluid {
+  display: flex;
+  margin: 0px 0px;
+  padding: 0px 0px;
+}
 
-// }
-// .moto-card-middle-info {
-//   position: relative;
+.row {
+  overflow: hidden;
+}
 
-// }
-// .moto-card-bottom-info {
-//   display: flex;
-//   justify-content: space-between;
-// }
-// .moto-card-img {
-//   padding-right: 8px;
-// }
-
-// .container {
-
-//   display: flex;
-// }
-
-// #map {
-//   position: sticky;
-//   height: 100vh;
-//   top: 0;
-// }
-
+.moto-cards {
+  display: list-item;
+}
 
 .card-product {
   overflow: hidden;
@@ -48,7 +19,7 @@
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 600px;
+  width: 615px;
   padding-top: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #e5e5e5;
