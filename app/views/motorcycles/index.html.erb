@@ -3,7 +3,7 @@
   <div class="moto-cards">
     <% @motorcycles.each do |motorcycle| %>
         <div class="card-product">
-          <img src="https://images.unsplash.com/photo-1587971051803-70bf6d4ae977?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80" />
+          <%= cl_image_tag motorcycle.photos.first.key, height: 150, width: 200, crop: :fill %>
          <a style="color: inherit;" href=" <%= motorcycle_path(motorcycle) %>">
           <div class="card-product-infos">
             <div class="card-product-infos-top">

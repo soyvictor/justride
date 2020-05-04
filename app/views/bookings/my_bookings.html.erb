@@ -7,9 +7,9 @@
       <%= cl_image_tag booking.motorcycle.photos.first.key, height: 150, width: 200, crop: :fill %>
       <div class="cardy-description">
         <h3><%= booking.motorcycle.year %> <%= booking.motorcycle.brand %> <%= booking.motorcycle.model %></h3>
-        <%= link_to 'Go to listing', motorcycle_path(booking.motorcycle) %>
-        <p style="font-size: 14px">Starts: <%= booking.start_date %></p>
-        <p style="font-size: 14px">Ends: <%= booking.end_date %></p>
+        <p style="font-size: 16px">Pickup: <%= booking.start_date.strftime("%B %d, %Y") %></p>
+        <p style="font-size: 16px">Dropoff: <%= booking.end_date.strftime("%B %d, %Y") %></p>
+        <%= link_to 'Go to listing', motorcycle_path(booking.motorcycle), style: "font-size: 16px" %>
       </div>
     </div>
   <% end %>
