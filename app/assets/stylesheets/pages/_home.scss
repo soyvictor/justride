@@ -10,7 +10,7 @@ h2 {
 }
 
 .banner-container {
-  background-image: url("https://images.unsplash.com/photo-1558979159-2b18a4070a87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80");
+  background: linear-gradient( rgba(60, 60, 60, 0.1), rgba(60, 60, 60, 0.1) ), url("https://images.unsplash.com/photo-1558979159-2b18a4070a87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80");
   margin: 0px;
   background-size: cover;
   height: 600px;
@@ -36,7 +36,7 @@ h2 {
   text-align: center;
   margin: 20px;
   border: 1px solid rgba(240, 240, 240, 0.5);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   padding: 40px;
   font-weight: bold;
   background-color: whit#C1C1C1e;
@@ -67,24 +67,23 @@ h2 {
   justify-content: center;
   font-weight: lighter;
   font-size: 12px;
-  background-color: rgba(220, 220, 220, 0.4);
+  background-color: #ffffff;
   height: 60px;
+  border-top: solid 1px #e4e4e4;
 }
 
 .list-inline {
-  list-style: none;
   padding-top: 20px;
 }
 
 .list-inline li {
   display: inline;
-  margin-top: 0px;
 }
 
 .font-icon {
-  font-size: 30px;
+  font-size: 24px;
   margin: 80px 2px;
-  color: grey;
+  color: #373737;
 }
 
 .font-icon:hover {
