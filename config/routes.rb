@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
     resources :bookings, except: [:edit, :destroy, :update] do
       collection do
-        get :my_bookings
+        get :my_bookings, :past_bookings
       end
     end
 
