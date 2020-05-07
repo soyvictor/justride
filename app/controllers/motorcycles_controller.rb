@@ -20,6 +20,10 @@ class MotorcyclesController < ApplicationController
     @motorcycles = Motorcycle.where(user: current_user)
   end
 
+  def my_motorcycles_host
+    @motorcycles = Motorcycle.where(user: current_user)
+  end
+
   def new
     @motorcycle = Motorcycle.new
   end
