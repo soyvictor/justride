@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :motorcycles do
 
     collection do
-      get :my_motorcycles
+      get :my_motorcycles, :my_motorcycles_host
     end
 
 
