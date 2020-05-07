@@ -1,22 +1,25 @@
-<h1 style="text-align: center; margin-top: 24px;">My Motorcycles</h1>
 <div class="container">
-
+  <h1 style=" margin-top: 24px; font-size: 32px; font-weight: bold; border-bottom: 1px solid #e4e4e4;">My Motorcycles</h1>
+  <div class="mt-4">
   <% @motorcycles.each do |motorcycle| %>
-
     <div class="cardy">
-      <%= cl_image_tag motorcycle.photos.first.key, height: 150, width: 250, crop: :fill %>
-      <div class="cardy-description">
+      <%= cl_image_tag motorcycle.photos.first.key, height: 90, width: 140, crop: :fill %>
+
+    <div class="cardy-description ml-3 mt-1" style="margin-right: 20px">
+      <div>
         <h3><%= motorcycle.year %> <%= motorcycle.brand %> <%= motorcycle.model %> <span style="font-weight: normal; font-size: 16px; ">($<%= motorcycle.price_per_day %>/day)</span></h3>
-        <div style="margin-bottom: 2px;">
+        </div>
+      <div>
         <%= link_to 'Go to listing', motorcycle_path(motorcycle) %> |
         <%= link_to 'Edit', edit_motorcycle_path(motorcycle) %>
-        </div>
-        <% motorcycle.bookings.each do |booking| %>
-          <p style="font-size: 16px; display: block; margin-bottom: 4px;"><span class="text-highlight">Booked</span> <%= booking.start_date.strftime("%B %d") %> - <%= booking.end_date.strftime("%B %d") %> by <%= booking.user.email %></p>
-        <% end %>
-
-
+        <p style="font-size: 1rem" >View bookings (<%= motorcycle.bookings.count %>)</p>
       </div>
     </div>
+  </div>
   <% end %>
+  </div>
+
 </div>
+
+
+

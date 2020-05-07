@@ -1,0 +1,31 @@
+<h1 style="text-align: center; margin-top: 24px;">My Bookings</h1>
+<div class="container">
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="<%= link_to 'upcoming' %>">Upcoming</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Past</a>
+  </li>
+  <!-- <li class="nav-item">
+    <a class="nav-link" href="#">My Favorites</a>
+  </li> -->
+  <!-- <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li> -->
+</ul>
+
+  <% @bookings.each do |booking| %>
+
+    <div class="cardy">
+      <%= cl_image_tag booking.motorcycle.photos.first.key, height: 150, width: 250, crop: :fill %>
+      <div class="cardy-description" style="margin-right: 20px;">
+        <h3><%= booking.motorcycle.year %> <%= booking.motorcycle.brand %> <%= booking.motorcycle.model %></h3>
+        <p style="font-size: 16px;">Pickup: <%= booking.start_date.strftime("%B %d, %Y") %></p>
+        <p style="font-size: 16px;">Dropoff: <%= booking.end_date.strftime("%B %d, %Y") %></p>
+        <%= link_to 'Go to listing', motorcycle_path(booking.motorcycle), style: "font-size: 16px" %>
+      </div>
+    </div>
+  <% end %>
+</div>

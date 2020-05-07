@@ -3,8 +3,11 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
-    @bookings = Booking.where(user: current_user)
+    @bookings = Booking.where(user: current_user).where('end_date > ?', Date.today)
+  end
 
+  def past_bookings
+    @bookings = Booking.where(user: current_user).where('end_date < ?', Date.today)
   end
 
   def create
