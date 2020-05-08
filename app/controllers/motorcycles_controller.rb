@@ -18,9 +18,11 @@ class MotorcyclesController < ApplicationController
 
   def my_motorcycles
     @motorcycles = Motorcycle.where(user: current_user)
+
   end
 
   def my_motorcycles_host
+    # <li><%= link to motorcycle.id, ......_path(motorcycle) %><li>
     @motorcycles = Motorcycle.where(user: current_user)
   end
 
