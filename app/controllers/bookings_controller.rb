@@ -10,6 +10,16 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user).where('end_date < ?', Date.today)
   end
 
+  def host_upcoming_bookings
+    @motorcycle = Motorcycle.find(params[:format])
+    @bookings = @motorcycle.bookings.where('end_date > ?', Date.today)
+  end
+
+   def host_past_bookings
+    @motorcycle = Motorcycle.find(params[:format])
+    @bookings = @motorcycle.bookings.where('end_date < ?', Date.today)
+  end
+
   def create
     # if booking_params[:start_date].blank? or booking_params[:end_date].blank?
 
@@ -36,5 +46,7 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :motorcycle_id)
   end
+
+
 
 end
