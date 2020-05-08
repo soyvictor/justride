@@ -19,8 +19,8 @@
               <p> Engine: <%= motorcycle.engine_size %>cc </p>
             </div>
             <div class="card-product-infos-bottom">
-              <p> 4.5 (<%= rand(1..1000) %>) </p>
-              <p> $<%= motorcycle.price_per_day %> / day </p>
+              <p> <strong><span style="font-size: 15px;"><%= rand(2.5..4.9).round(1) %></strong></span> <i style="font-size: 13px;" class="far fa-star"></i> (<%= rand(1..1000) %> Reviews) </p>
+              <p> <strong><span style="font-size: 15px;">$<%= motorcycle.price_per_day %> / day</strong></span> </p>
             </div>
           </div>
         </a>
