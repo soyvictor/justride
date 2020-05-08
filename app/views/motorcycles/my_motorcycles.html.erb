@@ -13,7 +13,7 @@
       <div>
         <%= link_to 'Go to listing', motorcycle_path(motorcycle), class: "text-dark" %> |
         <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: "text-dark"%> <br>
-        <a class="text-dark" href="<%= my_motorcycles_host_motorcycles_path %>" style="font-size: 1rem">View bookings (<%= motorcycle.bookings.count%>)</a>
+        <a class="text-dark" href="<%= # <%= link to motorcycle.id, ......_path(motorcycle) %> %>" style="font-size: 1rem">View bookings (<%= motorcycle.bookings.count%>)</a>
       </div>
     </div>
   </div>
