@@ -11,11 +11,24 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    @booking.motorcycle = Motorcycle.find(params[:motorcycle_id])
-    @booking.save
-    redirect_to upcoming_bookings_bookings_path
+    # if booking_params[:start_date].blank? or booking_params[:end_date].blank?
+
+    #   @motorcycle = Motorcycle.find(params[:motorcycle_id])
+    #   @booking = Booking.new
+
+    #   render "motorcycles/show"
+    # else
+      @booking = Booking.new(booking_params)
+      @booking.user = current_user
+      @motorcycle = Motorcycle.find(params[:motorcycle_id])
+      @booking.motorcycle = @motorcycle
+      if @booking.save
+        redirect_to upcoming_bookings_bookings_path
+      else
+        @error = "Please provide pickup and dropoff dates"
+        render "motorcycles/show"
+      end
+
   end
 
   private
