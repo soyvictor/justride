@@ -3,19 +3,14 @@
 
   <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link text-dark" href="<%= my_bookings_bookings_path %>">Upcoming</a>
+    <a class="nav-link text-dark" href="<%= upcoming_bookings_bookings_path %>">Upcoming</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active text-dark" href="<%=  past_bookings_bookings_path %>">Past</a>
   </li>
-  <!-- <li class="nav-item">
-    <a class="nav-link" href="#">My Favorites</a>
-  </li> -->
-  <!-- <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li> -->
+
 </ul>
 
-  <%= render 'bookcards' %>
+  <%= render 'bookings_cards' %>
 
 </div>
