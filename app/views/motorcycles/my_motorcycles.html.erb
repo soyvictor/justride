@@ -3,7 +3,7 @@
   <div class="mt-4">
   <% @motorcycles.each do |motorcycle| %>
     <div class="card-main">
-      <%= cl_image_tag motorcycle.photos.first.key, height: 90, width: 140, crop: :fill %>
+      <%= cl_image_tag motorcycle.photos.first.key, height: 180, width: 270, crop: :fill %>
 
     <div class="card-main-description ml-3 mt-1" style="margin-right: 15px; align-items: center !important;">
       <div>
@@ -13,7 +13,7 @@
       <div>
         <%= link_to 'Go to listing', motorcycle_path(motorcycle), class: "text-dark" %> |
         <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: "text-dark"%> <br>
-        <%= link_to "View bookings", host_upcoming_bookings_bookings_path(motorcycle.id), class: "text-dark", style:"font-size: 1rem" %>
+        <%= link_to "View bookings (#{motorcycle.bookings.where('end_date > ?', Date.today).count})", host_upcoming_bookings_bookings_path(motorcycle.id), class: "text-dark", style:"font-size: 1rem" %>
 
 
       </div>

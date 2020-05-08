@@ -6,11 +6,11 @@
     <a class="nav-link text-dark" href="<%= host_upcoming_bookings_bookings_path(@motorcycle.id) %>">Upcoming</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active text-dark" href="<%=  host_past_bookings_bookings_path %>">Past</a>
+    <a class="nav-link active text-dark" href="<%=  host_past_bookings_bookings_path(@motorcycle.id) %>">Past</a>
   </li>
 
 </ul>
 
-  <%= render 'host_bookings_cards' %>
+  <%= render 'host_past_bookings_cards' %>
 
 </div>
