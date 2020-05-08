@@ -13,7 +13,8 @@
       <div>
         <%= link_to 'Go to listing', motorcycle_path(motorcycle), class: "text-dark" %> |
         <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: "text-dark"%> <br>
-        <a class="text-dark" href="<%=  %> %>" style="font-size: 1rem">View bookings (<%= motorcycle.bookings.count%>)</a>
+        <%= link_to "View bookings", host_upcoming_bookings_bookings_path(motorcycle.id), class: "text-dark", style:"font-size: 1rem" %>
+
 
       </div>
     </div>
@@ -24,5 +25,3 @@
 </div>
 
 
-
- <!-- <%= link to motorcycle.id, _path(motorcycle)) -->
