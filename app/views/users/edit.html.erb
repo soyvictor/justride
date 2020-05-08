@@ -5,9 +5,9 @@
     <div class="m-auto" style="width: 550px">
 
       <%= simple_form_for [@user] do |f| %>
-        <%= f.input :photo, label: 'Attach a photo of you', as: :file%>
+        <%= f.input :photo, label: 'Attach a photo for your avatar',  as: :file%>
         <div class="mb-5">
-          <%= f.submit "Upload", class: "btn btn-primary" %>
+          <%= f.submit "Upload", class: "btn btn-dark" %>
         </div>
       <% end %>
     </div>
