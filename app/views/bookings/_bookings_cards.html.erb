@@ -1,10 +1,10 @@
 <div class="mt-4">
   <% @bookings.each do |booking| %>
 
-    <div class="cardy">
+    <div class="card-main">
       <%= cl_image_tag booking.motorcycle.photos.first.key, height: 90, width: 140, crop: :fill %>
 
-      <div class="cardy-description ml-3 mt-1" style="margin-right: 20px">
+      <div class="card-main-description ml-3 mt-1" style="margin-right: 20px">
 
         <div>
           <p style="font-size: 12px; color: #979797; font-weight: bold";>YOUR TRIP</p>

@@ -31,8 +31,11 @@ class MotorcyclesController < ApplicationController
   def create
     @motorcycle = Motorcycle.new(motorcycle_params)
     @motorcycle.user = current_user
-    @motorcycle.save
-    redirect_to motorcycle_path(@motorcycle)
+    if @motorcycle.save
+      redirect_to motorcycle_path(@motorcycle)
+    else
+      render :new
+    end
   end
 
   def show
@@ -46,8 +49,11 @@ class MotorcyclesController < ApplicationController
 
   def update
     @motorcycle = Motorcycle.find(params[:id])
-    @motorcycle.update(motorcycle_params)
-    redirect_to motorcycle_path(@motorcycle)
+    if @motorcycle.update(motorcycle_params)
+      redirect_to motorcycle_path(@motorcycle)
+    else
+      render :edit
+    end
   end
 
   private

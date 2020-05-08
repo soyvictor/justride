@@ -2,12 +2,13 @@
   <h1 style=" margin-top: 24px; font-size: 32px; font-weight: bold; border-bottom: 1px solid #e4e4e4;">My Motorcycles</h1>
   <div class="mt-4">
   <% @motorcycles.each do |motorcycle| %>
-    <div class="cardy">
+    <div class="card-main">
       <%= cl_image_tag motorcycle.photos.first.key, height: 90, width: 140, crop: :fill %>
 
-    <div class="cardy-description ml-3 mt-1" style="margin-right: 15px">
+    <div class="cardy-main-description ml-3 mt-1" style="margin-right: 15px">
       <div>
-        <h3><%= motorcycle.year %> <%= motorcycle.brand %> <%= motorcycle.model %> <span style="font-weight: normal; font-size: 16px; ">($<%= motorcycle.price_per_day %>/day)</span></h3>
+        <h3><%= motorcycle.year %> <%= motorcycle.brand %> <%= motorcycle.model %></h3>
+        <div style="font-weight: normal; font-size: 16px; ">($<%= motorcycle.price_per_day %>/day)</div>
         </div>
       <div>
         <%= link_to 'Go to listing', motorcycle_path(motorcycle) %> |
