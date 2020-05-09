@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :motorcycles do
     resources :bookings, only: [:create]
+    resources :reviews, only: :create
     collection do
       get :my_motorcycles, :my_motorcycles_host
     end

@@ -74,4 +74,14 @@
     </div>
 
   </div>
+  <div class="reviews">
+    <% if @motorcycle.reviews.blank? %>
+      Be the first to leave a review for <%= @motorcycle.title %>
+    <% else %>
+      <% @motorcycle.reviews.each do |review| %>
+        <p><%= review.content %></p>
+      <% end %>
+    <% end %>
+  </div>
+  </div>
 </div>
