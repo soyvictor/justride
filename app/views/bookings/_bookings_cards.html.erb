@@ -1,0 +1,23 @@
+<div class="mt-4">
+  <% @bookings.each do |booking| %>
+
+    <div class="card-main">
+      <%= cl_image_tag booking.motorcycle.photos.first.key, height: 180, width: 270, crop: :fill %>
+
+      <div class="card-main-description ml-3 mt-1" style="margin-right: 20px">
+
+        <div>
+          <p style="font-size: 12px; color: #979797; font-weight: bold";>YOUR TRIP</p>
+          <h3 style="font-size: 19px;"><%= booking.motorcycle.year %> <%= booking.motorcycle.brand %> <%= booking.motorcycle.model %></h3>
+          <p style="font-size: 14px;"><%= booking.start_date.strftime("%B %d") %> - <%= booking.end_date.strftime("%B %d") %> </p>
+        </div>
+
+        <div>
+          <%= link_to 'View listing', motorcycle_path(booking.motorcycle), class: "card-btn" %>
+        </div>
+
+      </div>
+
+    </div>
+  <% end %>
+  </div>

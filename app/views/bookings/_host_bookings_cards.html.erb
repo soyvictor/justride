@@ -1,0 +1,8 @@
+<div class="mt-4">
+  <% @bookings.each do |booking| %>
+
+<p style="font-size: 16px; display: block; margin-bottom: 8px;"><span class="text-highlight">Booked</span> <%= booking.start_date.strftime("%B %d") %> - <%= booking.end_date.strftime("%B %d") %> by <%= booking.user.email %></p>
+
+
+  <% end %>
+  </div>

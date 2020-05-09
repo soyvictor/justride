@@ -11,12 +11,18 @@ class MotorcyclesController < ApplicationController
        @markers = @motorcycles.map do |motorcycle|
       {
         lat: motorcycle.latitude,
-        lng: motorcycle.longitude
+        lng: motorcycle.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { motorcycle: motorcycle })
       }
     end
   end
 
   def my_motorcycles
+    @motorcycles = Motorcycle.where(user: current_user)
+  end
+
+  def my_motorcycles_host
+    # <li><%= link to motorcycle.id, ......_path(motorcycle) %><li>
     @motorcycles = Motorcycle.where(user: current_user)
   end
 
@@ -27,8 +33,11 @@ class MotorcyclesController < ApplicationController
   def create
     @motorcycle = Motorcycle.new(motorcycle_params)
     @motorcycle.user = current_user
-    @motorcycle.save
-    redirect_to motorcycle_path(@motorcycle)
+    if @motorcycle.save
+      redirect_to motorcycle_path(@motorcycle)
+    else
+      render :new
+    end
   end
 
   def show
@@ -42,8 +51,11 @@ class MotorcyclesController < ApplicationController
 
   def update
     @motorcycle = Motorcycle.find(params[:id])
-    @motorcycle.update(motorcycle_params)
-    redirect_to motorcycle_path(@motorcycle)
+    if @motorcycle.update(motorcycle_params)
+      redirect_to motorcycle_path(@motorcycle)
+    else
+      render :edit
+    end
   end
 
   private

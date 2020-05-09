@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 style="margin-top: 24px; font-size: 28px; font-weight: 600; font-family: raleway"><%= @motorcycle.year %> <%= @motorcycle.brand %> <%= @motorcycle.model %> bookings</h1>
+
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active text-dark" href="<% host_upcoming_bookings_bookings_path(@motorcycle.id) %>">Upcoming</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="<%=  host_past_bookings_bookings_path(@motorcycle.id)  %>">Past</a>
+  </li>
+
+</ul>
+
+  <%= render 'host_bookings_cards' %>
+
+</div>
+
+
+

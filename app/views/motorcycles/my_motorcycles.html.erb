@@ -1,22 +1,27 @@
-<h1 style="text-align: center; margin-top: 24px;">My Motorcycles</h1>
 <div class="container">
-
+  <h1 style=" padding-bottom: 4px; margin-top: 24px; font-size: 28px; font-family: raleway; font-weight: 600; border-bottom: 1px solid #e4e4e4;">My Motorcycles</h1>
+  <div class="mt-4">
   <% @motorcycles.each do |motorcycle| %>
+    <div class="card-main">
+      <%= cl_image_tag motorcycle.photos.first.key, height: 180, width: 270, crop: :fill %>
 
-    <div class="cardy">
-      <%= cl_image_tag motorcycle.photos.first.key, height: 150, width: 250, crop: :fill %>
-      <div class="cardy-description">
-        <h3><%= motorcycle.year %> <%= motorcycle.brand %> <%= motorcycle.model %> <span style="font-weight: normal; font-size: 16px; ">($<%= motorcycle.price_per_day %>/day)</span></h3>
-        <div style="margin-bottom: 2px;">
-        <%= link_to 'Go to listing', motorcycle_path(motorcycle) %> |
-        <%= link_to 'Edit', edit_motorcycle_path(motorcycle) %>
+    <div class="card-main-description ml-3 mt-1" style="margin-right: 15px; align-items: center !important;">
+      <div>
+        <h3><%= motorcycle.year %> <%= motorcycle.brand %> <%= motorcycle.model %></h3>
+        <div style="font-weight: normal; font-size: 16px; ">($<%= motorcycle.price_per_day %>/day)</div>
         </div>
-        <% motorcycle.bookings.each do |booking| %>
-          <p style="font-size: 16px; display: block; margin-bottom: 4px;"><span class="text-highlight">Booked</span> <%= booking.start_date.strftime("%B %d") %> - <%= booking.end_date.strftime("%B %d") %> by <%= booking.user.email %></p>
-        <% end %>
+      <div>
+        <%= link_to 'Go to listing', motorcycle_path(motorcycle), class: "text-dark" %> |
+        <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: "text-dark"%> <br>
+        <%= link_to "View bookings (#{motorcycle.bookings.where('end_date > ?', Date.today).count})", host_upcoming_bookings_bookings_path(motorcycle.id), class: "text-dark", style:"font-size: 1rem" %>
 
 
       </div>
     </div>
+  </div>
   <% end %>
+  </div>
+
 </div>
+
+
