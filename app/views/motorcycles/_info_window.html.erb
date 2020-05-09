@@ -1,0 +1,20 @@
+<a style="color: inherit;" href=" <%= motorcycle_path(motorcycle) %>">
+<div class="info-window-card">
+<%= cl_image_tag motorcycle.photos.first.key, height: 150, width: 200, crop: :fill %>
+  <div class="card-product-infos">
+    <h6 style="margin-bottom: 3px;"><%= motorcycle.title %></h6>
+      <div class="card-product-infos-middle">
+         <p> Brand: <%= motorcycle.brand %> </p>
+         <p> Model: <%= motorcycle.model %> </p>
+         <p> Type: <%= motorcycle.motorcycle_type %> </p>
+         <p> Year: <%= motorcycle.year %> </p>
+         <p> Engine: <%= motorcycle.engine_size %>cc </p>
+      </div>
+      <div class="card-product-infos-bottom" style="max-height: 0px;">
+         <p style="margin-top: 5px;"> 4.5 (<%= rand(1..1000) %>) </p>
+         <p style="margin-top: 5px;"> $<%= motorcycle.price_per_day %> / day </p>
+      </div>
+  </div>
+</div>
+</a>
+

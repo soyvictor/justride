@@ -61,6 +61,13 @@
   align-items: center;
 }
 
+.card-product .card-product-infos p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
 .card-product .card-product-infos:hover{
  background-color: #e5e5e5;
 }
