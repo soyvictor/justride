@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_09_162947) do
+ActiveRecord::Schema.define(version: 2020_05_09_174039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,9 @@ ActiveRecord::Schema.define(version: 2020_05_09_162947) do
     t.bigint "motorcycle_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["motorcycle_id"], name: "index_reviews_on_motorcycle_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -91,4 +93,5 @@ ActiveRecord::Schema.define(version: 2020_05_09_162947) do
   add_foreign_key "bookings", "users"
   add_foreign_key "motorcycles", "users"
   add_foreign_key "reviews", "motorcycles"
+  add_foreign_key "reviews", "users"
 end

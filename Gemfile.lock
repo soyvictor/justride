@@ -236,6 +236,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionview
   autoprefixer-rails
   bootsnap
   cloudinary (~> 1.12.0)
