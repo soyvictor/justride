@@ -12,7 +12,8 @@
         </div>
       <div>
         <%= link_to 'Go to listing', motorcycle_path(motorcycle), class: "text-dark" %> |
-        <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: "text-dark"%> <br>
+        <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: "text-dark"%> |
+        <%= link_to 'Delete' , motorcycle_path(motorcycle), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, class: "text-dark" %> <br>
         <%= link_to "View bookings (#{motorcycle.bookings.where('end_date > ?', Date.today).count})", host_upcoming_bookings_bookings_path(motorcycle.id), class: "text-dark", style:"font-size: 1rem" %>
 
 

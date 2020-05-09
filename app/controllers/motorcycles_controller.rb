@@ -1,5 +1,7 @@
 class MotorcyclesController < ApplicationController
 
+before_action :set_motorcycle, only: [:show, :edit, :update, :destroy]
+
   def index
     @motorcycles = Motorcycle.all
     @search = params["search"]
@@ -41,16 +43,14 @@ class MotorcyclesController < ApplicationController
   end
 
   def show
-    @motorcycle = Motorcycle.find(params[:id])
     @booking = Booking.new
   end
 
   def edit
-    @motorcycle = Motorcycle.find(params[:id])
   end
 
   def update
-    @motorcycle = Motorcycle.find(params[:id])
+
     if @motorcycle.update(motorcycle_params)
       redirect_to motorcycle_path(@motorcycle)
     else
@@ -58,10 +58,19 @@ class MotorcyclesController < ApplicationController
     end
   end
 
+  def destroy
+    @motorcycle.destroy
+    redirect_to my_motorcycles_motorcycles_path
+  end
+
   private
 
   def motorcycle_params
     params.require(:motorcycle).permit(:brand, :model, :year, :engine_size, :title, :description, :gear_included, :price_per_day, :motorcycle_type, :address, photos: [])
+  end
+
+  def set_motorcycle
+    @motorcycle = Motorcycle.find(params[:id])
   end
 
 end
