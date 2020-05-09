@@ -5,7 +5,7 @@ class Motorcycle < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-
+  validates :photos, presence: true
   validates :description, :brand, :model, :year, :price_per_day, :motorcycle_type, presence: true
   validates :engine_size, :title, presence: true
 end
