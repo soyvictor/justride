@@ -23,13 +23,14 @@
   padding-top: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #e5e5e5;
-  padding-left: 10px;
+  padding-left: 18px;
   border-radius: 5px;
+  font-family: raleway;
 }
 
 .card-product img {
-  height: 150px;
-  width: 200px;
+  height: 120px;
+  width: 170px;
   object-fit: cover;
   border-radius: 5px;
 
@@ -74,6 +75,7 @@
 
 .card-product .card-product-infos .card-product-infos-top {
   border-bottom: 1px solid #e5e5e5;
+  width: 420px;
   margin-top: 8px;
    padding-bottom: 8px;
 }
@@ -94,5 +96,16 @@ align-items: flex-end;
 .card-product-infos-bottom {
   display: flex;
   justify-content: space-between;
+}
+
+.photo-size {
+  font-family: raleway;
+}
+
+.photo-size img {
+  width: 200px;
+  height: 120px;
+  border-radius: 4px;
+  object-fit: cover;
 }
 

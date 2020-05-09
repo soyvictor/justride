@@ -1,6 +1,6 @@
 <a style="color: inherit;" href=" <%= motorcycle_path(motorcycle) %>">
-<div class="info-window-card">
-<%= cl_image_tag motorcycle.photos.first.key, height: 150, width: 200, crop: :fill %>
+<div class="info-window-card photo-size">
+<%= cl_image_tag motorcycle.photos.first.key, height: 300, width: 400, crop: :fill %>
   <div class="card-product-infos">
     <h6 style="margin-bottom: 3px;"><%= motorcycle.title %></h6>
       <div class="card-product-infos-middle">

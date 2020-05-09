@@ -1,9 +1,9 @@
- <h1 style="padding:8px"> Search Results </h1>
- <div class="container-fluid mt-5">
+ <h1 style="padding:8px" class="ml-2">Motorcycles in...<%= @search["address"] %> </h1>
+ <div class="container-fluid  ">
   <div class="moto-cards">
     <% @motorcycles.each do |motorcycle| %>
         <div class="card-product">
-          <%= cl_image_tag motorcycle.photos.first.key, height: 150, width: 200, crop: :fill %>
+          <%= cl_image_tag motorcycle.photos.first.key, height: 300, width: 400, crop: :fill %>
          <a style="color: inherit;" href=" <%= motorcycle_path(motorcycle) %>">
           <div class="card-product-infos">
             <div class="card-product-infos-top">

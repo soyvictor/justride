@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :motorcycles do
-    resources :bookings, only: [:create]
+
+    resources :bookings, only: [:create, :destroy]
     resources :reviews, only: :create
     collection do
       get :my_motorcycles, :my_motorcycles_host
