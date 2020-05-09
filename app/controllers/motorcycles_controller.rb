@@ -43,7 +43,13 @@ before_action :set_motorcycle, only: [:show, :edit, :update, :destroy]
   end
 
   def show
+    @motorcycle = Motorcycle.find(params[:id])
+    @review = Review.new
     @booking = Booking.new
+    respond_to do |format|
+      format.html { motorcycle_path}
+      format.js
+    end
   end
 
   def edit

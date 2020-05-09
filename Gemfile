@@ -37,3 +37,5 @@ end
   gem 'faker'
   gem 'geocoder'
   gem 'pg_search', '~> 2.3.0'
+  gem 'actionview'
+  gem 'turbolinks_render'
