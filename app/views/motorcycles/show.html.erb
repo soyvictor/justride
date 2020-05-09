@@ -66,34 +66,24 @@
   </div>
 
   <hr>
+
   <div class="reviews" style="margin-top: 30px; width: 600px">
     <h3> Comments (<%= Review.count %>) </h3>
+
       <%= simple_form_for([ @motorcycle, @review ]) do |f| %>
         <%= f.input :content, as: :text, placeholder: "Write your comment", label: false %>
         <%= f.button :submit, 'Create Comment', :class => 'btn-primary search-button mb-5' %>
       <% end %>
+
       <% if @motorcycle.reviews.blank? %>
         Be the first to leave a review for <%= @motorcycle.title %>
+
       <% else %>
-        <% @motorcycle.reviews.each do |review| %>
-        <div class="review" style="padding: 10px 10px;  overflow-wrap: break-word;">
 
-          <strong><%= review.user.email %></strong> <span style="font-size: 11px; color: gray;"><%= time_ago_in_words(review.created_at.to_time) %> ago </span><p><%= review.content %></p>
-          <div class="review-info" style="display: flex; justify-content: space-between;">
-            <div class="likes" style="display: flex; width: 50px; justify-content: space-between; margin-top: 5px;">
-              <i class="far fa-thumbs-down" style="font-size: 15px; color: gray;"></i>
-              <i class="far fa-thumbs-up" style="font-size: 15px; color: gray;"></i>
-            </div>
-            <div class="ctas" style="display: flex; width: 100px; justify-content: space-between; color: gray; font-size: 12px;">
-          <p> Share <p>
-          <p> Reply <p>
-            </div>
-
-
-          </div>
-          <hr>
+        <div id="comments">
+          <%= render 'shared/comments' %>
         </div>
-        <% end %>
+
       <% end %>
   </div>
 

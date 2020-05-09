@@ -1,0 +1,7 @@
+
+function renderComment(html) {
+  const container = document.getElementById("comments")
+  container.innerHTML = html
+}
+
+renderComment('<%= render j "shared/comments" %>')
