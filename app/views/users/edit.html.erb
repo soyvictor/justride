@@ -1,25 +1,24 @@
 <div class="container">
-  <h1 style=" padding-bottom: 4px; margin-top: 24px; font-size: 28px; font-family: raleway; font-weight: 600; border-bottom: 1px solid #e4e4e4;">My Profile</h1>
-
+  <h1>My Profile</h1>
   <div>
     <h2 style="font-family: raleway;">Update your profile photo</h2>
-
     <div class="profile-middle">
-    <div>
-    <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, gravity: :face, crop: :thumb, height: 400, width: 400, class: "avatar-small dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style:"border-radius: 4px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)" %>
-    <% else %>
-      <%= image_tag "https://res.cloudinary.com/vc334/image/upload/c_thumb,g_face,h_400,w_400/ldy28x5xt9skq4f2gdznnrs8p490", class: "avatar-small dropdown-toggle", style:"border-radius: 4px; box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3)", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <% end %>
+      <div>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, gravity: :face, crop: :thumb, height: 400, width: 400, class: "avatar-small dropdown-toggle profile-photo-large", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag "https://res.cloudinary.com/vc334/image/upload/c_thumb,g_face,h_400,w_400/ldy28x5xt9skq4f2gdznnrs8p490", class: "avatar-small profile-photo-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
 
-    <div style="margin-top: 24px;">
-    <%= simple_form_for [@user] do |f| %>
-      <%= f.input :photo, label: false,  as: :file%>
-        <%= f.submit "Upload", class: "btn btn-dark text-center mt-0" %>
-      <% end %>
+        <div style="margin-top: 24px;">
+          <%= simple_form_for [@user] do |f| %>
+            <%= f.input :photo, label: false,  as: :file%>
+          <%= f.submit "Upload", class: "btn btn-dark text-center mt-0" %>
+        <% end %>
+        </div>
+
+      </div>
     </div>
-    </div>
-  </div>
   </div>
 </div>
 

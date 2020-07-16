@@ -1,4 +1,4 @@
 <%= simple_form_for :search, url: motorcycles_path, method: "GET", html: { class: 'form-inline ml-5 pl-5' } do |f| %>
-<%= f.input :address, input_html: {value: "", style: "width: 300px; font-size: 14px; letter-spacing: -.5px; color: #767676" }, label: false, placeholder: 'address, neighborhood, city, state or zip' %>
-<%= f.submit "Search", class: "btn ml-2", style: "background-color: #593cfb; color: white; font-size: 15px;" %>
+  <%= f.input :address, input_html: {value: "", style: "width: 300px; font-size: 14px; letter-spacing: -.5px; color: #767676" }, label: false, placeholder: 'address, neighborhood, city, state or zip' %>
+  <%= f.submit "Search", class: "btn ml-2", style: "background-color: #593cfb; color: white; font-size: 15px;" %>
 <% end %>
