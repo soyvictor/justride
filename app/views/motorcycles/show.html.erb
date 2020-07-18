@@ -28,7 +28,7 @@
 
       <h1><%= @motorcycle.title %></h1>
       <p><%= @motorcycle.description %></p>
-      <p style="font-style: italic">More info:</p>
+      <p style="font-style: italic">Details:</p>
       <ul>
         <li>Engine size: <%= @motorcycle.engine_size %></li>
         <li>Riding gear included: <%= @motorcycle.gear_included ? "yes" : "no" %></li>
@@ -68,25 +68,23 @@
   <hr>
 
   <div class="reviews" style="margin-top: 30px; width: 600px">
-    <h3> Comments (<%= Review.count %>) </h3>
+    <h3> Comments (<%= @motorcycle.reviews.count %>) </h3>
+
+    <% if @motorcycle.reviews.blank? %>
+        Be the first to leave a review
+        <br><br>
+    <% end %>
 
       <%= simple_form_for([ @motorcycle, @review ]) do |f| %>
         <%= f.input :content, as: :text, placeholder: "Write your comment", label: false %>
         <%= f.button :submit, 'Create Comment', :class => 'btn-primary search-button mb-5' %>
       <% end %>
 
-      <% if @motorcycle.reviews.blank? %>
-        Be the first to leave a review for <%= @motorcycle.title %>
-
-      <% else %>
-
         <div id="comments">
           <%= render 'shared/comments' %>
         </div>
 
-      <% end %>
-  </div>
 
+    </div>
   </div>
-
 </div>
