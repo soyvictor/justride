@@ -12,7 +12,7 @@
 
         <div style="margin-top: 24px;">
           <%= simple_form_for [@user] do |f| %>
-            <%= f.input :photo, label: false,  as: :file%>
+            <%= f.input :photo, input_html: { class: 'd-none'},  label_html: { class: 'upload-photo'}, label: '📷 Upload a photo',  as: :file%>
           <%= f.submit "Upload", class: "btn btn-dark text-center mt-0" %>
         <% end %>
         </div>
