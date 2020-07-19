@@ -1,37 +1,33 @@
- <h1 style="padding:8px" class="ml-2">Motorcycles in...<%= @search["address"].upcase %> </h1>
- <div class="container-fluid  ">
-  <div class="moto-cards">
-    <% @motorcycles.each do |motorcycle| %>
-        <div class="card-product">
-          <%= cl_image_tag motorcycle.photos.first.key, height: 300, width: 400, crop: :fill %>
-         <a style="color: inherit;" href=" <%= motorcycle_path(motorcycle) %>">
-          <div class="card-product-infos">
-            <div class="card-product-infos-top">
-              <h2> <%= motorcycle.year %> <%= motorcycle.brand %> <%= motorcycle.model %> </h2>
+<h1 style="padding:8px; border-bottom: none;" class="ml-2">
+  Motorcycles in...<%= @search["address"].upcase %>
+</h1>
+
+<div class="the-container" style="margin-left: 8px; margin-right: 20px;">
+  <div class="row">
+    <div class="col-sm-6">
+        <% @motorcycles.each do |motorcycle| %>
+        <a style="color: inherit;" href=" <%= motorcycle_path(motorcycle) %>">
+          <div class="d-flex card-product">
+            <%= cl_image_tag motorcycle.photos.first.key, height: 300, width: 400, crop: :fill %>
+
+            <div style="width: 80%; padding: 8px;">
+              <h2> <%= motorcycle.title %> </h2>
+              <p style="font-size: 14px;"> <%= motorcycle.year %> <%= motorcycle.brand %> <%= motorcycle.model %> </p>
+              <p class="overflow-text"><%= motorcycle.description %></p>
+              <p style="margin-top: 0px;"> <%= motorcycle.address %>
+              <div class="d-flex flex-row-reverse">
+              <p style="font-size: 15px; font-weight: bold; ">$<%= motorcycle.price_per_day %>/day </p>
+              </div>
             </div>
-            <p><%= motorcycle.title %></p>
-            <!-- <p><%= motorcycle.description %> </p> -->
-            <div class="card-product-infos-middle">
-<!--               <p> Brand: <%= motorcycle.brand %> </p>
-              <p> Model: <%= motorcycle.model %> </p>
-              <p> Type: <%= motorcycle.motorcycle_type %> </p>
-              <p> Year: <%= motorcycle.year %> </p>
-              <p> Engine: <%= motorcycle.engine_size %>cc </p> -->
-            </div>
-            <p style="margin-top: 0px;"> <%= motorcycle.address %> </p>
-            <div class="card-product-infos-bottom">
-              <p> <strong><span style="font-size: 15px;"><%= rand(2.5..4.9).round(1) %></strong></span> <i style="font-size: 13px;" class="far fa-star"></i> (<%= motorcycle.reviews.count %> Comments) </p>
-              <p> <strong><span style="font-size: 15px;">$<%= motorcycle.price_per_day %> / day</strong></span> </p>
-            </div>
+
           </div>
-        </a>
-        </div>
-     <% end %>
-   </div>
-      <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
- </div>
+        <% end %>
+    </div>
+  </a>
 
+    <div class="col-sm-6" id="map" style="width: 100%; height: 600px;"
+          data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" >
+    </div>
 
+  </div>
+</div>

@@ -13,24 +13,18 @@
 }
 
 .card-product {
-  overflow: hidden;
-  height: 200px;
+  // overflow: hidden;
   background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  width: 615px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 8px 8px;
   border-bottom: 1px solid #e5e5e5;
-  padding-left: 18px;
   border-radius: 5px;
   font-family: raleway;
 }
 
 .card-product img {
-  height: 120px;
-  width: 170px;
+  height: 140px;
+  width: 260px;
   object-fit: cover;
   border-radius: 5px;
 
@@ -62,12 +56,20 @@
   align-items: center;
 }
 
-.card-product .card-product-infos p {
+// .card-product .card-product-infos p {
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   max-width: 400px;
+// }
+
+.overflow-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 400px;
 }
+
 
 .card-product .card-product-infos:hover{
  background-color: #e5e5e5;
