@@ -7,7 +7,7 @@
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, gravity: :face, crop: :thumb, height: 400, width: 400, class: "avatar-small dropdown-toggle profile-photo-large", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
-          <%= image_tag "https://res.cloudinary.com/vc334/image/upload/c_thumb,g_face,h_400,w_400/ldy28x5xt9skq4f2gdznnrs8p490", class: "avatar-small profile-photo-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://res.cloudinary.com/vc334/image/upload/c_thumb,g_face,h_400,w_400/v1618094100/default-avatar_r7zlez.png", class: "avatar-small profile-photo-large dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
 
         <div style="margin-top: 24px;">
