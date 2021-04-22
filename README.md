@@ -1,1 +1,1 @@
-An online marketplace to find and book motorcycles.
+A peer-to-peer marketplace for renting motorcycles.
