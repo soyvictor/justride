@@ -39,12 +39,8 @@
     <div class="col-12 col-lg-4">
       <div class="border p-3">
         <h2>Book this bike!</h2>
-
-
         <form action="/bookings" method="post" id="new_booking">
-
           <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-
 
           <div class="form-group">
             <label for="">Pickup</label>
@@ -57,7 +53,6 @@
           </div>
 
           <input type="hidden" id="motorcycle_id" name="motorcycle_id" value=<%= @motorcycle.id %> >
-
           <input type="submit" value="Book now" class="btn btn-primary btn-lg w-100">
           <p style="color: red;" class="mt-2"><%= @error %></p>
         </form>
@@ -68,23 +63,22 @@
   <hr>
 
   <div class="reviews" style="margin-top: 30px; width: 600px">
-    <h3> Comments (<%= @motorcycle.reviews.count %>) </h3>
-
-    <% if @motorcycle.reviews.blank? %>
-        Be the first to leave a review
-        <br><br>
-    <% end %>
-
-      <%= simple_form_for([ @motorcycle, @review ]) do |f| %>
-        <%= f.input :content, as: :text, placeholder: "Write your comment", label: false %>
-        <%= f.button :submit, 'Leave Comment', :class => 'btn-primary search-button mb-5' %>
+      <h3> Comments (<%= @motorcycle.reviews.count %>) </h3>
+      <% if @motorcycle.reviews.blank? %>
+          Be the first to leave a comment.
+          <br><br>
       <% end %>
-
-        <div id="comments">
-          <%= render 'shared/comments' %>
-        </div>
-
-
+      <% if user_signed_in? %>
+        <%= simple_form_for([ @motorcycle, @review ], remote: true) do |f| %>
+          <%= f.input :content, as: :text, placeholder: "Write your comment", label: false %>
+          <%= f.button :submit, 'Leave Comment', :class => 'btn-primary search-button mb-5' %>
+        <% end %>
+      <% else %>
+        <h3>Please sign in to leave a comment.</h3>
+      <% end %>
+      <div id="comments">
+        <%= render 'shared/comments' %>
+      </div>
     </div>
   </div>
 </div>
